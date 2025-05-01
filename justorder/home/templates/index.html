@@ -1,5 +1,118 @@
-{% extends "layout.html" %}
+{% extends 'layout.html' %}
+{% load static %}
 
 {% block content %}
-    <h1>Welcome to the Home Page</h1>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Shop by Category</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- Vegetables -->
+        <div class="col">
+            <a href="{% url 'category_items' 'vegetables' %}" class="text-decoration-none">
+                <div class="card h-100">
+                    <img src="{% static 'images/vegetables.jpg' %}" class="card-img-top" alt="Vegetables">
+                    <div class="card-body">
+                        <h5 class="card-title">Vegetables</h5>
+                        <p class="card-text">Fresh and organic vegetables for your daily needs.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- Fruits -->
+        <div class="col">
+            <a href="{% url 'category_items' 'fruits' %}" class="text-decoration-none">
+                <div class="card h-100">
+                    <img src="{% static 'images/fruits.jpg' %}" class="card-img-top" alt="Fruits">
+                    <div class="card-body">
+                        <h5 class="card-title">Fruits</h5>
+                        <p class="card-text">Seasonal and exotic fruits to keep you healthy.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- Dairy Products -->
+        <div class="col">
+            <a href="{% url 'category_items' 'dairy' %}" class="text-decoration-none">
+                <div class="card h-100">
+                    <img src="{% static 'images/dairy.jpg' %}" class="card-img-top" alt="Dairy Products">
+                    <div class="card-body">
+                        <h5 class="card-title">Dairy Products</h5>
+                        <p class="card-text">Milk, cheese, butter, and more from trusted sources.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- Oils/Vinegars -->
+        <div class="col">
+            <a href="{% url 'category_items' 'oils' %}" class="text-decoration-none">
+                <div class="card h-100">
+                    <img src="{% static 'images/oils.jpg' %}" class="card-img-top" alt="Oils and Vinegars">
+                    <div class="card-body">
+                        <h5 class="card-title">Oils & Vinegars</h5>
+                        <p class="card-text">High-quality oils and vinegars for your cooking needs.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- Spices/Herbs -->
+        <div class="col">
+            <a href="{% url 'category_items' 'spices' %}" class="text-decoration-none">
+                <div class="card h-100">
+                    <img src="{% static 'images/spices.jpg' %}" class="card-img-top" alt="Spices and Herbs">
+                    <div class="card-body">
+                        <h5 class="card-title">Spices & Herbs</h5>
+                        <p class="card-text">Aromatic spices and herbs to enhance your dishes.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- Snacks -->
+        <div class="col">
+            <a href="{% url 'category_items' 'snacks' %}" class="text-decoration-none">
+                <div class="card h-100">
+                    <img src="{% static 'images/snacks.jpg' %}" class="card-img-top" alt="Snacks">
+                    <div class="card-body">
+                        <h5 class="card-title">Snacks</h5>
+                        <p class="card-text">Delicious snacks for every occasion.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- Baked Items -->
+        <div class="col">
+            <a href="{% url 'category_items' 'baked' %}" class="text-decoration-none">
+                <div class="card h-100">
+                    <img src="{% static 'images/baked.jpg' %}" class="card-img-top" alt="Baked Items">
+                    <div class="card-body">
+                        <h5 class="card-title">Baked Items</h5>
+                        <p class="card-text">Freshly baked bread, cakes, and pastries.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- Beverages -->
+        <div class="col">
+            <a href="{% url 'category_items' 'beverages' %}" class="text-decoration-none">
+                <div class="card h-100">
+                    <img src="{% static 'images/beverages.jpg' %}" class="card-img-top" alt="Beverages">
+                    <div class="card-body">
+                        <h5 class="card-title">Beverages</h5>
+                        <p class="card-text">Refreshing drinks to quench your thirst.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- Personal Care -->
+        <div class="col">
+            <a href="{% url 'category_items' 'personal' %}" class="text-decoration-none">
+                <div class="card h-100">
+                    <img src="{% static 'images/personal_care.jpg' %}" class="card-img-top" alt="Personal Care">
+                    <div class="card-body">
+                        <h5 class="card-title">Personal Care</h5>
+                        <p class="card-text">Products to keep you looking and feeling great.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
 {% endblock %}

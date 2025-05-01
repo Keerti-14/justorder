@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">{{ category_name }}</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for item in items %}
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.name }}</h5>
+                    <p class="card-text">{{ item.description }}</p>
+                    <p class="card-text"><strong>Price:</strong> ${{ item.price }}</p>
+                    <a href="{% url 'add_to_cart' item.name item.price %}" class="btn btn-primary">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

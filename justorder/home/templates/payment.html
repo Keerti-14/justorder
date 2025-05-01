@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Payment Options</h2>
+    <h4 class="text-center">Total Amount: ${{ total_price }}</h4>
+    <div class="mt-4">
+        <form method="POST" action="{% url 'process_payment' %}">
+            {% csrf_token %}
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="payment_method" id="cash" value="Cash" required>
+                <label class="form-check-label" for="cash">Cash</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="payment_method" id="upi" value="UPI">
+                <label class="form-check-label" for="upi">UPI</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="payment_method" id="credit_card" value="Credit Card">
+                <label class="form-check-label" for="credit_card">Credit Card</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="payment_method" id="debit_card" value="Debit Card">
+                <label class="form-check-label" for="debit_card">Debit Card</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="payment_method" id="neft" value="NEFT">
+                <label class="form-check-label" for="neft">NEFT</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="payment_method" id="paytm" value="Paytm">
+                <label class="form-check-label" for="paytm">Paytm</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="payment_method" id="amazon_pay" value="Amazon Pay">
+                <label class="form-check-label" for="amazon_pay">Amazon Pay</label>
+            </div>
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-success">Proceed to Pay</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

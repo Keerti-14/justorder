@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Payment Successful</h2>
+    <p class="text-center">Thank you for your purchase!</p>
+    <h4 class="text-center">Total Amount Paid: ${{ total_price }}</h4>
+    <h5 class="text-center">Payment Method: {{ payment_method }}</h5>
+    <div class="text-center mt-4">
+        <a href="{% url 'index' %}" class="btn btn-primary">Return to Home</a>
+    </div>
+</div>
+{% endblock %}
