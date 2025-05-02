@@ -1,0 +1,28 @@
+<!-- filepath: c:\code\justorder\justorder\home\templates\raise_ticket.html -->
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Raise a Ticket</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="order_id" class="form-label">Order ID:</label>
+            <input type="text" class="form-control" id="order_id" name="order_id" placeholder="Enter your Order ID" required>
+        </div>
+        <div class="mb-3">
+            <label for="contact_email" class="form-label">Contact Email:</label>
+            <input type="email" class="form-control" id="contact_email" name="contact_email" placeholder="Enter your email" required>
+        </div>
+        <div class="mb-3">
+            <label for="contact_number" class="form-label">Contact Number:</label>
+            <input type="tel" class="form-control" id="contact_number" name="contact_number" placeholder="Enter your contact number" required>
+        </div>
+        <div class="mb-3">
+            <label for="issue" class="form-label">Describe your issue:</label>
+            <textarea class="form-control" id="issue" name="issue" rows="4" placeholder="Describe your issue" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}

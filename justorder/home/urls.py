@@ -31,6 +31,10 @@ urlpatterns = [
     path('checkout/', views.payment_page, name='payment_page'),
     path('process-payment/', views.process_payment, name='process_payment'),
     path('orders/', views.orders, name='orders'),
+    path('support/', views.support_view, name='support'),
+    path('raise-ticket/', views.raise_ticket_view, name='raise_ticket'),
+    path('orders/<int:order_id>/', views.order_items_view, name='order_items'),
+
     # path('admin/', admin.site.urls),
     
 ] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

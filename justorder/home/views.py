@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Order
 import json
 
@@ -263,3 +263,15 @@ def orders(request):
         "orders": user_orders,
     }
     return render(request, "orders.html", context)
+
+def support_view(request):
+    return render(request, 'support.html')
+
+def raise_ticket_view(request):
+    return render(request, 'raise_ticket.html')
+
+
+def order_items_view(request, order_id):
+    order = get_object_or_404(Order, id=order_id)
+    items = order.get_items()  # Use the `get_items` method to parse the JSON
+    return render(request, 'order_items.html', {'order': order, 'items': items})

@@ -22,9 +22,7 @@
                 <td>${{ order.total_price }}</td>
                 <td>{{ order.payment_method }}</td>
                 <td>
-                    <button class="btn btn-sm btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#order-{{ order.id }}" aria-expanded="false" aria-controls="order-{{ order.id }}">
-                        View Items
-                    </button>
+                    <a href="{% url 'order_items' order.id %}" class="btn btn-primary">View Items</a>
                 </td>
             </tr>
             <tr class="collapse" id="order-{{ order.id }}">
