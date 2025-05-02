@@ -1,0 +1,13 @@
+<!-- filepath: c:\code\justorder\justorder\home\templates\support.html -->
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Support</h1>
+    <p>How can we assist you?</p>
+    <ul>
+        <li><a href="tel:+1234567890">Call Us: +1 234 567 890</a></li>
+        <li><a href="{% url 'raise_ticket' %}">Raise a Ticket</a></li>
+    </ul>
+</div>
+{% endblock %}

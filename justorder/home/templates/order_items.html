@@ -1,0 +1,23 @@
+<!-- filepath: c:\code\justorder\justorder\home\templates\order_items.html -->
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Order Items</h1>
+    <p><strong>Order ID:</strong> {{ order.id }}</p>
+    <p><strong>Total Price:</strong> ${{ order.total_price }}</p>
+    <p><strong>Payment Method:</strong> {{ order.payment_method }}</p>
+    <p><strong>Order Date:</strong> {{ order.created_at }}</p>
+
+    <h2>Items</h2>
+    <ul class="list-group">
+        {% for item in items %}
+            <li class="list-group-item">
+                <strong>{{ item.name }}</strong> - ${{ item.price }} x {{ item.quantity }}
+            </li>
+        {% empty %}
+            <li class="list-group-item">No items found for this order.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
